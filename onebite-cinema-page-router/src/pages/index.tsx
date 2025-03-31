@@ -1,3 +1,5 @@
+import SearchableLayout from "@/components/searchable-layout";
+
 export default function Home() {
   return (
     <div>
@@ -5,3 +7,7 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getLayout = (page: React.ReactNode) => {
+  return <SearchableLayout>{page}</SearchableLayout>;
+};
