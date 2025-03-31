@@ -1,4 +1,7 @@
 $bgColor: rgb(0, 0, 0);
 $fontColor: rgb(255, 255, 255);
 $primaryColor: rgb(229, 9, 20);
-$primaryHoverColor: darken($primaryColor, 10%);
+$primaryDarkColor: darken($primaryColor, 10%);
+$borderColor: rgb(68, 68, 68);
+$borderOutlineColor: darken($borderColor, 10%);
+$buttonColor: rgb(68, 68, 68);
