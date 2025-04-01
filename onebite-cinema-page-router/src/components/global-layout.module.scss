@@ -5,18 +5,22 @@
   min-height: 100vh;
 
   header {
-    display: flex;
-    align-items: center;
-    height: 60px;
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
 
-    a {
-      display: inline-block;
-      font-size: 20px;
-      font-weight: bold;
-      color: $primaryColor;
+      a {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        color: $primaryColor;
+        transition: color 0.2s ease-in-out;
 
-      &:hover {
-        color: $primaryDarkColor;
+        &:hover {
+          color: $primaryDarkColor;
+        }
       }
     }
   }

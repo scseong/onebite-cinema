@@ -6,7 +6,9 @@ export default function GlobalLayout({ children }: PropsWithChildren) {
   return (
     <div className={style.container}>
       <header>
-        <Link href="/">ONEBITE CINEMA</Link>
+        <h1>
+          <Link href="/">ONEBITE CINEMA</Link>
+        </h1>
       </header>
       <main>{children}</main>
       <footer>© 2025 ONEBITE CINEMA. All rights reserved.</footer>

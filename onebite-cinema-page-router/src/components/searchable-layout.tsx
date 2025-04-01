@@ -35,29 +35,31 @@ export default function SearchableLayout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <form onSubmit={handleSubmit} role="search" className={style.form}>
-        <div className={style.searchbox_container}>
-          <input
-            type="search"
-            name="query"
-            placeholder="검색어를 입력하세요 ..."
-            aria-label="영화 제목으로 검색"
-            value={search}
-            onChange={handleInputChange}
-            ref={inputRef}
-          />
-          {search && (
-            <button
-              type="button"
-              className={style.clear_btn}
-              onClick={handleClearButtonClick}
-            >
-              <CancelIcon role="image" aria-label="검색어 초기화" />
-            </button>
-          )}
-        </div>
-        <button>검색</button>
-      </form>
+      <div>
+        <form onSubmit={handleSubmit} role="search" className={style.form}>
+          <div className={style.searchbox_container}>
+            <input
+              type="search"
+              name="query"
+              placeholder="검색어를 입력하세요 ..."
+              aria-label="영화 제목으로 검색"
+              value={search}
+              onChange={handleInputChange}
+              ref={inputRef}
+            />
+            {search && (
+              <button
+                type="button"
+                className={style.clear_btn}
+                onClick={handleClearButtonClick}
+              >
+                <CancelIcon role="image" aria-label="검색어 초기화" />
+              </button>
+            )}
+          </div>
+          <button>검색</button>
+        </form>
+      </div>
       {children}
     </>
   );
