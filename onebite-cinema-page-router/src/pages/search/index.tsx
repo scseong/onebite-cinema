@@ -1,24 +1,26 @@
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import SearchableLayout from "@/components/searchable-layout";
 import MovieItem from "@/components/movie-item";
 import { fetchMovies } from "@/lib";
+import type { Movie } from "@/types/movie";
 import style from "./index.module.scss";
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  const q = context.query.q;
-  const movies = await fetchMovies(q as string);
+export default function Search() {
+  const [movies, setMovies] = useState<Movie[]>([]);
 
-  return {
-    props: { movies, q },
+  const router = useRouter();
+  const q = router.query.q as string;
+
+  const fetchSearchResult = async () => {
+    const data = await fetchMovies(q);
+    setMovies(data);
   };
-};
 
-export default function Search({
-  movies,
-  q,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  useEffect(() => {
+    if (q) fetchSearchResult();
+  }, [q]);
+
   return (
     <section className={style.search}>
       <h2>검색 결과: {q}</h2>
