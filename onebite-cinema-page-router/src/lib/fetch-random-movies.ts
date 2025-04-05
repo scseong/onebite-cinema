@@ -1,7 +1,7 @@
 import { Movie } from "@/types/movie";
 
 export default async function fetchRandomMovies(): Promise<Movie[]> {
-  const URL = "http://localhost:12345/movie/random";
+  const URL = `${process.env.NEXT_PUBLIC_SERVER_URL}/movie/random`;
 
   try {
     const res = await fetch(URL);

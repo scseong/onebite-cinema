@@ -3,7 +3,7 @@ import { Movie } from "@/types/movie";
 export default async function fetchOneMovie(
   movieId: string
 ): Promise<Movie | null> {
-  const url = `http://localhost:12345/movie/${movieId}`;
+  const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/movie/${movieId}`;
 
   try {
     const res = await fetch(url);
