@@ -1,4 +1,5 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { fetchMovies, fetchOneMovie } from "@/lib";
 import style from "./[id].module.scss";
@@ -35,7 +36,21 @@ export default function Movie({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
 
-  if (router.isFallback) return "로딩중입니다 ...";
+  if (router.isFallback)
+    return (
+      <>
+        <Head>
+          <title>한입 씨네마</title>
+          <meta property="og:image" content="/thumbnail.png" />
+          <meta property="og:title" content="한입 씨네마" />
+          <meta
+            property="og:description"
+            content="취향에 맞는 추천 영화 목록과 모든 영화 정보를 한 곳에서! 한입 씨네마"
+          />
+        </Head>
+        <div>로딩중입니다 ...</div>
+      </>
+    );
   if (!movie) return "문제가 발생했습니다. 다시 시도해주세요.";
 
   const {
@@ -51,6 +66,12 @@ export default function Movie({
 
   return (
     <section className={style.movie}>
+      <Head>
+        <title>{title}</title>
+        <meta property="og:image" content={posterImgUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+      </Head>
       <div
         style={{ backgroundImage: `url('${posterImgUrl})` }}
         className={style.cover_img_container}

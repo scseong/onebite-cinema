@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SearchableLayout from "@/components/searchable-layout";
@@ -23,6 +24,15 @@ export default function Search() {
 
   return (
     <section className={style.search}>
+      <Head>
+        <title>한입 씨네마 - 검색 결과: {q}</title>
+        <meta property="og:image" content="/thumbnail.png" />
+        <meta property="og:title" content="한입 씨네마" />
+        <meta
+          property="og:description"
+          content="모든 영화 정보를 한 곳에서! 한입 씨네마"
+        />
+      </Head>
       <h2>검색 결과: {q}</h2>
       <hr />
       <div>
