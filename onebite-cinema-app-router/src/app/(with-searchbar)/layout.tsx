@@ -1,10 +1,13 @@
 import { PropsWithChildren } from "react";
+import SearchBar from "./search/_components/searchbar";
 
 export default function layout({ children }: PropsWithChildren) {
   return (
-    <section>
-      <div>서치바 레이아웃</div>
+    <>
+      <div>
+        <SearchBar />
+      </div>
       {children}
-    </section>
+    </>
   );
 }

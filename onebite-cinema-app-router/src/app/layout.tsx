@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header>글로벌 레이아웃</header>
-        {children}
+        <main>{children}</main>
         <footer>© 2025 ONEBITE CINEMA. All rights reserved.</footer>
       </body>
     </html>
