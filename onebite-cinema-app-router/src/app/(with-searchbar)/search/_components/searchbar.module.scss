@@ -1,0 +1,76 @@
+$svgSize: 25px;
+$inputRightPadding: 5px;
+$borderRadius: 5px;
+
+.form {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 10px;
+
+  & > button {
+    width: 80px;
+    border-radius: $borderRadius;
+    background-color: var(--buttonColor);
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--primaryDarkColor);
+    }
+  }
+}
+
+.searchbox_container {
+  flex: 1;
+  position: relative;
+  height: 50px;
+
+  input[type="search"] {
+    padding: 10px calc($svgSize + $inputRightPadding) 10px 10px;
+    width: 100%;
+    height: inherit;
+    background-color: inherit;
+    border-radius: $borderRadius;
+    border: 1px solid var(--borderColor);
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      border-color: var(--primaryColor);
+      outline: none;
+    }
+
+    &::-webkit-search-cancel-button {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+  }
+}
+
+.clear_btn {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  right: $inputRightPadding;
+  transform: translate(0, -50%);
+
+  svg {
+    width: $svgSize;
+    height: $svgSize;
+    background: url("../../../../../public/cancel.svg") no-repeat;
+    fill: var(--fontColor);
+    cursor: pointer;
+    transition: fill 0.2s ease-in-out;
+
+    &:hover {
+      fill: var(--primaryColor);
+    }
+  }
+}

@@ -1,6 +1,11 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bgColor: rgb(0, 0, 0);
+  --fontColor: rgb(255, 255, 255);
+  --primaryColor: rgb(229, 9, 20);
+  --primaryDarkColor: color-mix(in srgb, var(--primaryColor), #000 10%);
+  --borderColor: rgb(68, 68, 68);
+  --borderOutlineColor: color-mix(in srgb, var(--borderColor), #000 10%);
+  --buttonColor: rgb(68, 68, 68);
 }
 
 html,
@@ -10,8 +15,8 @@ body {
 
 body {
   min-height: 100vh;
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--fontColor);
+  background: var(--bgColor);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,6 +25,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: inherit;
 }
 
 a {
@@ -30,4 +36,10 @@ a {
 ul,
 li {
   list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }

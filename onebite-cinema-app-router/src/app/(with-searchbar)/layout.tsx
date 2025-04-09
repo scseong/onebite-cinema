@@ -1,11 +1,13 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, Suspense } from "react";
 import SearchBar from "./search/_components/searchbar";
 
 export default function layout({ children }: PropsWithChildren) {
   return (
     <>
       <div>
-        <SearchBar />
+        <Suspense>
+          <SearchBar />
+        </Suspense>
       </div>
       {children}
     </>

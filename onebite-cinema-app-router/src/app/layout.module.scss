@@ -1,0 +1,32 @@
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 800px;
+  min-height: 100vh;
+
+  header {
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+
+      a {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--primaryColor);
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: var(--primaryDarkColor);
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: 50px;
+    padding: 20px 0;
+  }
+}
