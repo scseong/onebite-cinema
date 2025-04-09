@@ -64,7 +64,7 @@ $borderRadius: 5px;
   svg {
     width: $svgSize;
     height: $svgSize;
-    background: url("../../../../../public/cancel.svg") no-repeat;
+    background: url("/public/cancel.svg") no-repeat;
     fill: var(--fontColor);
     cursor: pointer;
     transition: fill 0.2s ease-in-out;
