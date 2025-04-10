@@ -4,7 +4,8 @@ import style from "./page.module.scss";
 
 async function AllMovies() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`,
+    { next: { revalidate: 60 * 10 } }
   );
 
   if (!response.ok) {
@@ -24,7 +25,8 @@ async function AllMovies() {
 
 async function RecoMovies() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/random`
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/random`,
+    { next: { revalidate: 60 * 60 } }
   );
 
   if (!response.ok) {

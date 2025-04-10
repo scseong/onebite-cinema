@@ -4,7 +4,8 @@ import style from "./page.module.scss";
 export default async function MovieDetail({ params }: NextPage) {
   const { id } = await params;
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${id}`
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${id}`,
+    { next: { revalidate: 60 * 60 * 24 } }
   );
 
   if (!response.ok) {

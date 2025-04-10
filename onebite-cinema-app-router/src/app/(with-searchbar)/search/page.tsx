@@ -6,7 +6,8 @@ export default async function Search({ searchParams }: NextPage) {
   const { q } = await searchParams;
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/search?q=${q}`
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/search?q=${q}`,
+    { next: { revalidate: 60 } }
   );
 
   if (!response.ok) {
