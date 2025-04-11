@@ -1,29 +1,30 @@
 import { MovieData } from "@/types/types";
 import style from "./page.module.scss";
 
-export default async function MovieDetail({ params }: NextPage) {
-  const { id } = await params;
+async function fetchMovie(movieId: string) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${id}`,
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${movieId}`,
     { next: { revalidate: 60 * 60 * 24 } }
   );
 
   if (!response.ok) {
-    return <div>오류가 발생했습니다...</div>;
+    return null;
   }
 
   const movie: MovieData = await response.json();
-  const {
-    title,
-    releaseDate,
-    company,
-    genres,
-    subTitle,
-    description,
-    runtime,
-    posterImgUrl,
-  } = movie;
+  return movie;
+}
 
+function MovieView({
+  title,
+  releaseDate,
+  company,
+  genres,
+  subTitle,
+  description,
+  runtime,
+  posterImgUrl,
+}: MovieData) {
   return (
     <section className={style.movie}>
       <div
@@ -51,4 +52,18 @@ export default async function MovieDetail({ params }: NextPage) {
       <p>{description}</p>
     </section>
   );
+}
+
+export default async function MovieContainer({ params }: NextPage) {
+  const { id } = await params;
+  const movie = await fetchMovie(id);
+
+  if (!movie)
+    return (
+      <section className={style.movie}>
+        <h2>영화 정보를 찾을 수 없습니다.</h2>
+      </section>
+    );
+
+  return <MovieView {...movie} />;
 }

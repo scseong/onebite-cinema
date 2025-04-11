@@ -5,7 +5,7 @@ export default function layout({ children }: PropsWithChildren) {
   return (
     <>
       <div>
-        <Suspense>
+        <Suspense fallback={<div>Loading ...</div>}>
           <SearchBar />
         </Suspense>
       </div>

@@ -6,21 +6,28 @@ import { useState, useEffect } from "react";
 import SearchButton from "./search-button";
 import style from "./searchbar.module.scss";
 
-export default function SearchBar() {
+function useInput(query: string) {
   const [search, setSearch] = useState("");
-  const searchParams = useSearchParams();
-  const q = searchParams.get("q") ?? "";
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
   useEffect(() => {
-    setSearch(q);
-
+    setSearch(query);
     return () => setSearch("");
-  }, [q]);
+  }, [query]);
 
+  return { search, handleInputChange };
+}
+
+function SearchInputForm({
+  search,
+  handleInputChange,
+}: {
+  search: string;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}) {
   return (
     <div>
       <Form action="/search" role="search" className={style.form}>
@@ -38,5 +45,15 @@ export default function SearchBar() {
         <SearchButton />
       </Form>
     </div>
+  );
+}
+
+export default function SearchBarContainer() {
+  const searchParams = useSearchParams();
+  const q = searchParams.get("q") ?? "";
+  const { search, handleInputChange } = useInput(q);
+
+  return (
+    <SearchInputForm search={search} handleInputChange={handleInputChange} />
   );
 }
