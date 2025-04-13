@@ -1,19 +1,21 @@
 import MovieList from "./_components/movie-list";
+import { ApiError, handleResponse } from "../utils/api";
 import { MovieData } from "@/types/types";
 import style from "./page.module.scss";
 
 async function fetchRecoMovies() {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/random`,
-    { next: { revalidate: 60 * 60 } }
-  );
-
-  if (!response.ok) {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/random`,
+      { next: { revalidate: 60 * 60 } }
+    );
+    const recoMovies = await handleResponse<MovieData[]>(response);
+    return recoMovies;
+  } catch (e) {
+    if (e instanceof ApiError)
+      console.error("영화 검색 중 에러 발생:", e.message);
     return null;
   }
-
-  const recoMovies: MovieData[] = await response.json();
-  return recoMovies;
 }
 
 async function fetchAllMovies() {
@@ -21,12 +23,7 @@ async function fetchAllMovies() {
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`,
     { next: { revalidate: 60 * 10 } }
   );
-
-  if (!response.ok) {
-    return null;
-  }
-
-  const allMovies: MovieData[] = await await response.json();
+  const allMovies = await handleResponse<MovieData[]>(response);
   return allMovies;
 }
 

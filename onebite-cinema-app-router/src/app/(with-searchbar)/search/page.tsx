@@ -1,19 +1,21 @@
 import MovieItem from "../_components/movie-item";
+import { ApiError, handleResponse } from "@/app/utils/api";
 import { MovieData } from "@/types/types";
 import style from "./page.module.scss";
 
 async function fetchMovies(q: string) {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/search?q=${q}`,
-    { next: { revalidate: 60 } }
-  );
-
-  if (!response.ok) {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/search?q=${q}`,
+      { next: { revalidate: 60 } }
+    );
+    const movie = await handleResponse<MovieData[]>(response);
+    return movie;
+  } catch (e) {
+    if (e instanceof ApiError)
+      console.error("영화 검색 중 에러 발생:", e.message);
     return null;
   }
-
-  const movie: MovieData[] = await response.json();
-  return movie;
 }
 
 function SearchView({ movies, query }: { movies: MovieData[]; query: string }) {
