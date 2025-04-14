@@ -1,4 +1,4 @@
-import { ApiError, handleResponse } from "@/app/utils/api";
+import { ApiError, handleResponse } from "@/utils/api";
 import { MovieData } from "@/types/types";
 
 export default async function fetchMovie(movieId: string) {
