@@ -7,6 +7,7 @@ export default async function fetchMovie(movieId: string) {
       `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${movieId}`,
       { next: { revalidate: 60 * 60 * 24 } }
     );
+
     const movie = await handleResponse<MovieData>(response);
     return movie;
   } catch (e) {

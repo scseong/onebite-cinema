@@ -1,6 +1,17 @@
-import { fetchMovie } from "@/apis";
+import { fetchAllMovies, fetchMovie } from "@/apis";
 import { MovieData } from "@/types/types";
 import style from "./page.module.scss";
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const allMovies = (await fetchAllMovies()) ?? [];
+  const ids = allMovies.map((movie) => ({
+    id: movie.id.toString() ?? "0",
+  }));
+
+  return ids;
+}
 
 function MovieView({
   title,
