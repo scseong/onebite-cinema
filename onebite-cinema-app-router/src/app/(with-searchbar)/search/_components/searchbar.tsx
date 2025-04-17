@@ -21,7 +21,7 @@ function useInput(query: string) {
   return { search, handleInputChange };
 }
 
-function SearchInputForm({
+export function SearchInputForm({
   search,
   handleInputChange,
 }: {

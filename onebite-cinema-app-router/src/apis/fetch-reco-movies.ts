@@ -7,6 +7,7 @@ export default async function fetchRecoMovies() {
       `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/random`,
       { next: { revalidate: 60 * 60 } }
     );
+
     const recoMovies = await handleResponse<MovieData[]>(response);
     return recoMovies;
   } catch (e) {
