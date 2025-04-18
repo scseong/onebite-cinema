@@ -1,6 +1,5 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import style from "./movie-item-skeleton.module.scss";
-import "react-loading-skeleton/dist/skeleton.css";
 
 export default function MovieItemSkeleton() {
   return (
