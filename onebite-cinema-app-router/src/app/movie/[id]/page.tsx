@@ -1,4 +1,5 @@
 import { fetchAllMovies, fetchMovie } from "@/apis";
+import { createReviewAction } from "@/actions/create-review.action";
 import { MovieData } from "@/types/types";
 import style from "./page.module.scss";
 
@@ -52,6 +53,19 @@ function MovieView({
   );
 }
 
+function ReviewEditor({ movieId }: { movieId: string }) {
+  return (
+    <section>
+      <form action={createReviewAction}>
+        <input name="content" type="text" placeholder="리뷰 내용" required />
+        <input name="author" type="text" placeholder="작성자" required />
+        <input name="movieId" type="text" value={movieId} hidden readOnly />
+        <button type="submit">작성하기</button>
+      </form>
+    </section>
+  );
+}
+
 export default async function MovieContainer({ params }: NextPage) {
   const { id } = await params;
   const movie = await fetchMovie(id);
@@ -63,5 +77,10 @@ export default async function MovieContainer({ params }: NextPage) {
       </section>
     );
 
-  return <MovieView {...movie} />;
+  return (
+    <>
+      <MovieView {...movie} />
+      <ReviewEditor movieId={id} />
+    </>
+  );
 }
