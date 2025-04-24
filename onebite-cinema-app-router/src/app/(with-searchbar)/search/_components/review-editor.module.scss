@@ -1,0 +1,53 @@
+%input_style {
+  padding: 10px;
+  height: inherit;
+  background-color: inherit;
+  border-radius: 5px;
+  border: 1px solid var(--borderColor);
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+
+  &:focus {
+    border-color: var(--primaryColor);
+    outline: none;
+  }
+}
+
+.form {
+  margin-top: 64px;
+
+  textarea {
+    @extend %input_style;
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+}
+
+.submit_container {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  height: 50px;
+
+  input {
+    @extend %input_style;
+    height: 100%;
+  }
+
+  button {
+    padding: 10px;
+    width: 80px;
+    border-radius: 5px;
+    background-color: var(--buttonColor);
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--primaryDarkColor);
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { fetchAllMovies, fetchMovie } from "@/apis";
-import { createReviewAction } from "@/actions/create-review.action";
+import { ReviewEditor } from "@/app/(with-searchbar)/search/_components/review-editor";
 import { MovieData } from "@/types/types";
 import style from "./page.module.scss";
 
@@ -49,19 +49,6 @@ function MovieView({
       </dl>
       <h3>{subTitle}</h3>
       <p>{description}</p>
-    </section>
-  );
-}
-
-function ReviewEditor({ movieId }: { movieId: string }) {
-  return (
-    <section>
-      <form action={createReviewAction}>
-        <input name="content" type="text" placeholder="리뷰 내용" required />
-        <input name="author" type="text" placeholder="작성자" required />
-        <input name="movieId" type="text" value={movieId} hidden readOnly />
-        <button type="submit">작성하기</button>
-      </form>
     </section>
   );
 }
