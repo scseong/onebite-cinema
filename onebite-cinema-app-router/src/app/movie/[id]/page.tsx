@@ -1,5 +1,6 @@
 import { fetchAllMovies, fetchMovie } from "@/apis";
 import { ReviewEditor } from "@/app/(with-searchbar)/search/_components/review-editor";
+import ReviewList from "@/app/(with-searchbar)/search/_components/review-list";
 import { MovieData } from "@/types/types";
 import style from "./page.module.scss";
 
@@ -68,6 +69,7 @@ export default async function MovieContainer({ params }: NextPage) {
     <>
       <MovieView {...movie} />
       <ReviewEditor movieId={id} />
+      <ReviewList movieId={id} />
     </>
   );
 }

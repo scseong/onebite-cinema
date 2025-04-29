@@ -14,7 +14,7 @@
 }
 
 .form {
-  margin-top: 64px;
+  margin-top: 56px;
 
   textarea {
     @extend %input_style;
@@ -23,6 +23,7 @@
     max-height: 200px;
     resize: vertical;
     box-sizing: border-box;
+    resize: none;
   }
 }
 
@@ -35,7 +36,6 @@
 
   input {
     @extend %input_style;
-    height: 100%;
   }
 
   button {

@@ -8,14 +8,10 @@ export async function createReviewAction(formData: FormData) {
   if (!content || !author) return;
 
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_SERVER_URL}/review`,
-      {
-        method: "POST",
-        body: JSON.stringify({ movieId, content, author }),
-      }
-    );
-    console.log(response.status);
+    await fetch(`${process.env.NEXT_PUBLIC_API_SERVER_URL}/review`, {
+      method: "POST",
+      body: JSON.stringify({ movieId, content, author }),
+    });
   } catch (err) {
     console.error(err);
     return;
