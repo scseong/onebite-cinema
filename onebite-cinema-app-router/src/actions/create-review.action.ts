@@ -1,5 +1,7 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
+
 export async function createReviewAction(formData: FormData) {
   const movieId = formData.get("movieId")?.toString();
   const content = formData.get("content")?.toString();
@@ -12,6 +14,7 @@ export async function createReviewAction(formData: FormData) {
       method: "POST",
       body: JSON.stringify({ movieId, content, author }),
     });
+    revalidatePath(`/movie/${movieId}`);
   } catch (err) {
     console.error(err);
     return;
