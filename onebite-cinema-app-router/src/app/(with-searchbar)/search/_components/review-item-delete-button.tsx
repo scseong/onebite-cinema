@@ -26,7 +26,7 @@ export default function ReviewItemDeleteButton({
       <input type="text" name="reviewId" value={reviewId} hidden readOnly />
       <input type="text" name="movieId" value={movieId} hidden readOnly />
       <button type="submit" disabled={isPending}>
-        삭제하기
+        {isPending ? "삭제중..." : "삭제하기"}
       </button>
     </form>
   );
