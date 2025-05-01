@@ -21,7 +21,16 @@
 }
 
 .bottom {
-  //   padding: 15px 0;
-  //   background-color: #2c2c2c;
   border-radius: 5px;
+}
+
+.delete_wrap {
+  button {
+    text-decoration: underline;
+    color: rgb(180, 180, 180);
+
+    &:disabled {
+      cursor: default;
+    }
+  }
 }
