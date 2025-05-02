@@ -18,6 +18,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
           <main>{children}</main>
           <footer>© 2025 ONEBITE CINEMA. All rights reserved.</footer>
         </div>
+        <div id="modal-root"></div>
       </body>
     </html>
   );
