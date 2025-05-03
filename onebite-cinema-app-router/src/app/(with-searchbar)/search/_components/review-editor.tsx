@@ -23,6 +23,7 @@ export function ReviewEditor({ movieId }: { movieId: string }) {
           name="content"
           placeholder="리뷰 내용"
           disabled={isPending}
+          autoFocus={false}
           required
         />
         <input name="movieId" type="text" value={movieId} hidden readOnly />

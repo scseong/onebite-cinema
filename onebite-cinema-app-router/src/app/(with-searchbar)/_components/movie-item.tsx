@@ -10,7 +10,7 @@ export default function MovieItem({
 }: MovieData) {
   return (
     <li className={style.container}>
-      <Link href={`/movie/${id}`}>
+      <Link href={`/movie/${id}`} scroll={false}>
         <div className={style.poster}>
           <img src={posterImgUrl} alt={title} />
         </div>

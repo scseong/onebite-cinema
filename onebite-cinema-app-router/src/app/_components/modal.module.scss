@@ -1,0 +1,18 @@
+.modal {
+  padding: 16px;
+  margin: auto;
+  max-width: 600px;
+  background-color: var(--bgColor);
+  border-radius: 5px;
+  border: none;
+  box-shadow: var(--primaryColor) 0px 0px 0px 1px;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
