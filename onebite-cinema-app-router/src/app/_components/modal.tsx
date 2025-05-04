@@ -1,13 +1,16 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { PropsWithChildren, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import useScrollLock from "@/hooks/useScrollLock";
 import style from "./modal.module.scss";
-import { useRouter } from "next/navigation";
 
 export default function Modal({ children }: PropsWithChildren) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const router = useRouter();
+
+  useScrollLock();
 
   useEffect(() => {
     if (!dialogRef.current?.open) {

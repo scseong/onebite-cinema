@@ -1,11 +1,11 @@
 .modal {
-  padding: 16px;
+  padding: 32px;
   margin: auto;
   max-width: 600px;
   background-color: var(--bgColor);
   border-radius: 5px;
   border: none;
-  box-shadow: var(--primaryColor) 0px 0px 0px 1px;
+  box-shadow: var(--borderColor) 0px 1px 4px, var(--borderColor) 0px 0px 0px 3px;
   -ms-overflow-style: none;
 
   &::-webkit-scrollbar {

@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 import "./globals.scss";
 import style from "./layout.module.scss";
 
-export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
+export default function RootLayout({
+  children,
+  modal,
+}: Readonly<PropsWithChildren & { modal: ReactNode }>) {
   return (
     <html lang="ko">
       <body>
@@ -18,6 +21,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
           <main>{children}</main>
           <footer>© 2025 ONEBITE CINEMA. All rights reserved.</footer>
         </div>
+        {modal}
         <div id="modal-root"></div>
       </body>
     </html>
