@@ -3,6 +3,7 @@ import MovieList from "../_components/movie-list";
 import MovieListSkeleton from "../_components/skeleton/movie-list-skeleton";
 import { fetchMoviesWithQuery } from "@/apis";
 import style from "./page.module.scss";
+import Image from "next/image";
 
 async function SearchContainer({ query }: { query: string }) {
   const movies = await fetchMoviesWithQuery(query);
@@ -10,9 +11,11 @@ async function SearchContainer({ query }: { query: string }) {
   if (!movies?.length)
     return (
       <div>
-        <img
+        <Image
           src="/no-result.png"
           alt="검색 결과 없음"
+          width={654}
+          height={654}
           style={{ width: "100%" }}
         />
       </div>

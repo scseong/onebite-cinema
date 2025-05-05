@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { fetchAllMovies, fetchMovie } from "@/apis";
 import { ReviewEditor } from "@/app/(with-searchbar)/search/_components/review-editor";
 import ReviewList from "@/app/(with-searchbar)/search/_components/review-list";
@@ -31,7 +32,7 @@ function MovieView({
         style={{ backgroundImage: `url('${posterImgUrl})` }}
         className={style.cover_img_container}
       >
-        <img src={posterImgUrl} alt={title} />
+        <Image src={posterImgUrl} alt={title} width={240} height={350} />
       </div>
       <h2>{title}</h2>
       <dl className={style.movie_details}>
