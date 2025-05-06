@@ -7,6 +7,34 @@ import style from "./page.module.scss";
 
 export const dynamicParams = false;
 
+export async function generateMetadata({ params }: NextPage) {
+  const { id } = await params;
+  const movie = await fetchMovie(id);
+
+  if (!movie)
+    return {
+      title: "한입 씨네마",
+      description:
+        "취향에 맞는 추천 영화 목록과 모든 영화 정보를 한 곳에서! 한입 씨네마",
+      openGraph: {
+        title: "한입 씨네마",
+        description:
+          "취향에 맞는 추천 영화 목록과 모든 영화 정보를 한 곳에서! 한입 씨네마",
+        images: ["/thumbnail.png"],
+      },
+    };
+
+  return {
+    title: `${movie.title} - 한입 씨네마`,
+    description: movie?.description,
+    openGraph: {
+      title: `${movie.title} - 한입 씨네마`,
+      description: movie?.description,
+      images: [movie.posterImgUrl],
+    },
+  };
+}
+
 export async function generateStaticParams() {
   const allMovies = (await fetchAllMovies()) ?? [];
   const ids = allMovies.map((movie) => ({

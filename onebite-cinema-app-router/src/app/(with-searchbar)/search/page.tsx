@@ -1,9 +1,27 @@
+import { Metadata } from "next";
 import { Suspense } from "react";
 import MovieList from "../_components/movie-list";
 import MovieListSkeleton from "../_components/skeleton/movie-list-skeleton";
 import { fetchMoviesWithQuery } from "@/apis";
 import style from "./page.module.scss";
 import Image from "next/image";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const { q } = await searchParams;
+  return {
+    title: `검색결과: ${q} - 한입 씨네마`,
+    description: `${q}의 검색 결과입니다`,
+    openGraph: {
+      title: `검색결과: ${q} - 한입 씨네마`,
+      description: `${q}의 검색 결과입니다`,
+      images: ["/thumbnail.png"],
+    },
+  };
+}
 
 async function SearchContainer({ query }: { query: string }) {
   const movies = await fetchMoviesWithQuery(query);
