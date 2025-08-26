@@ -23,6 +23,20 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"><img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"> | <img src="https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white"> | <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"><img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"> |
 
+## 🎞️ 결과
+
+| 메인 페이지                                                  | 상세 페이지                                                  | 검색 결과                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNTA0MDlfMjYy/MDAxNzQ0MTcxMTAxNDMx.U_1en4LkF8z-vG4DrSEbFal08Sb1QTjRmWyt1GGiyrsg.QjhSPPs6Ktxi-YHmD7rJmebBfzv_nzhs2ApNcBFEBSog.PNG/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-04-09_125734.png?type=w1600"> | <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNTA0MjlfMjAg/MDAxNzQ1OTM4MjkzNDgy.T7raU8EF04VKQHIgxRUeBMu8Y9LSUkfCjt5ZY83ayaEg.ynJV4WastwbRuigh4hrUmV5rJSMO9QGRQ4_iLaT16S8g.PNG/image.png?type=w1600"> | <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNTA0MTVfMjgx/MDAxNzQ0NzEzODg3MDc0.oRsTcwOEHHd_VWxHnC6pMmvln5cYc9xqo4oq97H3neAg.TAdtg09HcfpFs5CL9bIRooc9OaT8rCzAd91UxcQWEMYg.GIF/%EC%8A%A4%ED%81%AC%EB%A6%B0_%EC%BA%A1%EC%B2%98_20250415_194316.gif?type=w1600"> |
+
+| 리뷰 생성                                                    | 리뷰 삭제                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNTA1MDFfMSAg/MDAxNzQ2MDc0NjYwOTc4.XLNuIedemHmKRs7bbua7uDM0ysQ6Z24WUah06Rcwm4Yg.HUCASPKXfn5_5yOfAWs-rMBqHI8dQcDcwwKX3LCbRWwg.GIF/%EC%8A%A4%ED%81%AC%EB%A6%B0_%EC%BA%A1%EC%B2%98_20250501_134236.gif?type=w1600"> | <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNTA1MDFfMjYx/MDAxNzQ2MDc5MDk1OTky.MwRMIj0TP5N0GQkTaYjIXMmuKBdWMC5mr9W-erhwiEwg.as-puLyshDTT_SzmHcgLHIE9peB4rVk8XdYYM2FrEE8g.GIF/%EC%8A%A4%ED%81%AC%EB%A6%B0_%EC%BA%A1%EC%B2%98_20250501_145705.gif?type=w1600"> |
+
+
+
+
+
 ## 🗓️ 일별 진행 내용
 
 본 프로젝트는 '한입 챌린지 5기'로 진행되었으며, 각 일자별 주요 진행 사항 및 학습 내용은 아래 링크에서 자세히 확인하실 수 있습니다.
