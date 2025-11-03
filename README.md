@@ -1,6 +1,7 @@
 # 한입 씨네마 프로젝트(한입 챌린지 5기)
 
 > [한 입 크기로 잘라먹는 Next.js(v15) 강의](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%ED%81%AC%EA%B8%B0-nextjs/dashboard)를 수강하며 진행한 챌린지입니다. 
+> Next.js App Router와 Page Router 차이를 이해하고, 사전 렌더링 방식, RSC, 서버 액션, 데이터 최적화 기법을 숙련하는 것을 목표로 진행했습니다.
 
 ## 📝 프로젝트 개요
 
