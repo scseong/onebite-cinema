@@ -70,10 +70,10 @@
 
 - Page Router에서 App Router로의 전환 과정을 이해하고 각 환경에 적합한 라우팅 및 레이아웃 구현
 - **SSR, SSG, ISR 등 다양한 사전 렌더링 방식**을 적용하여 페이지 특성에 맞는 최적의 렌더링 전략을 구축
-- **React Server Component (RSC)**를 활용하여 서버와 클라이언트의 역할을 분리하고 초기 로딩 성능 개선
+- **React Server Component**를 활용하여 서버와 클라이언트의 역할을 분리하고 초기 로딩 성능 개선
 
 #### 성능 최적화 및 고급 기능
 
-- **서버 액션(Server Actions)**을 통해 데이터 변경 및 폼 처리, 캐싱(Full-Route Cache, Memoization) 및 데이터 재검증 적용
+- **서버 액션**을 통해 데이터 변경 및 폼 처리, 캐싱(Full-Route Cache, Memoization) 및 데이터 재검증 적용
 - **스트리밍(Streaming)** 및 **Suspense**를 활용한 컴포넌트별 로딩 최적화
 - **인터셉팅 라우트**를 이용한 모달 구현 등 고급 라우팅 패턴을 적용하고, **SEO 및 이미지 최적화**
